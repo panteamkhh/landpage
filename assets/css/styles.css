@@ -2695,6 +2695,90 @@ img { max-width: 100%; display: block; }
   .mini-dash { max-width: 210px; }
 }
 
+/* ---------- کادر یکپارچه نمونه‌ها ---------- */
+.work-frame {
+  background: var(--paper-2);
+  border: 1px solid var(--line-2);
+  border-radius: 20px;
+  padding: 14px;
+}
+
+.work-frame .work-bar {
+  margin: 0;
+  padding: 4px 6px 14px;
+  border-block-end: 1px solid var(--line-2);
+  margin-block-end: 14px;
+}
+
+.work-frame .work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.work-grid .case,
+.work-grid[data-mode="all"] .case:nth-child(n),
+.work-grid[data-mode="filtered"] .case:nth-child(n) {
+  grid-column: auto;
+}
+
+.work-grid[data-count="1"] { grid-template-columns: 1fr; }
+
+.work-frame .case {
+  display: flex;
+  background: var(--white);
+  border-color: var(--line-2);
+}
+
+.work-frame .case-btn { height: 100%; }
+
+.work-frame .case-media,
+.work-frame .case--lead .case-media,
+.work-frame .case--wide .case-media {
+  position: relative;
+  flex: none;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+  border-block-end: 1px solid var(--line);
+  border-inline-start: 0;
+}
+
+.work-frame .case--lead .case-btn,
+.work-frame .case--wide .case-btn {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.work-frame .case--lead .case-body,
+.work-frame .case--wide .case-body {
+  padding: 18px;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.work-frame .case--lead .case-title,
+.work-frame .case--wide .case-title {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.work-frame .case--lead .case-summary,
+.work-frame .case--wide .case-summary {
+  -webkit-line-clamp: 2;
+  max-width: none;
+}
+
+.work-frame .case .case-body {
+  padding: 18px;
+}
+
+@media (max-width: 760px) {
+  .work-frame { padding: 10px; border-radius: 16px; }
+  .work-frame .work-bar { padding: 2px 2px 12px; }
+  .work-frame .work-grid,
+  .work-frame .work-grid[data-count="1"] { grid-template-columns: 1fr; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

@@ -138,7 +138,7 @@
   function projectCard(p, i) {
     const n = toFa(i + 1);
     const num = n.length < 2 ? "۰" + n : n;
-    const lead = i === 0 ? " case--lead" : i === 3 ? " case--wide" : "";
+    const lead = "";
     return (
       '<article class="case' + lead + '" data-category="' + p.category + '">' +
         '<button type="button" class="case-btn" data-open="' + p.id + '" aria-haspopup="dialog">' +
@@ -185,6 +185,8 @@
       card.hidden = !match;
       if (match) shown += 1;
     });
+    grid.setAttribute("data-count", String(shown));
+
     if (countEl) {
       countEl.textContent = shown ? toFa(shown) + " پروژه" : "موردی نیست";
     }
