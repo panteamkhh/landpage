@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>هوش‌یار — ابزار کار برای کسب‌وکار کوچک</title>
+  <meta name="description" content="گزارش روزانه، پاسخ خودکار به مشتری و داشبورد فروش. ابزارهای ساده‌ی هوش مصنوعی برای کسب‌وکارهای کوچک." />
+  <meta name="theme-color" content="#0b0d0f" />
+  <meta property="og:title" content="هوش‌یار | ماشین گزارش می‌نویسد، تو تصمیم می‌گیری" />
+  <meta property="og:description" content="ابزارهای ساده‌ی هوش مصنوعی و داده برای کسب‌وکارهای کوچک: گزارش روزانه، چت‌بات فارسی، داشبورد فروش." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0d0f'/%3E%3Cpath d='M10 22V10h2.6l6.8 7.4V10H22v12h-2.6l-6.8-7.4V22H10z' fill='%23e6eaee'/%3E%3Ccircle cx='24' cy='24' r='1.6' fill='%23e0b173'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <a class="skip-link" href="#main">رفتن به محتوا</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="i-wa" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.5-.72-2.96-1.17-4.86-4.2-5-4.4-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2.02.9 2.17.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.13.07.75-.17 1.43Z"/>
+    </symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M21.9 4.1 2.7 11.55c-.92.36-.88 1.08.07 1.33l4.83 1.46 1.86 5.68c.2.6.45.75.9.4l2.55-1.95 4.9 3.6c.7.5 1.4.25 1.62-.72l3-13.9c.2-.96-.37-1.36-1.43-.95ZM9.45 15.15l9.15-5.8-7.35 6.65-.25 3.05-1.55-3.9Z"/>
+    </symbol>
+    <symbol id="i-bale" viewBox="0 0 24 24">
+      <path d="M12 3.4c4.8 0 8.6 3.2 8.6 7.2s-3.8 7.2-8.6 7.2c-.85 0-1.7-.1-2.5-.3l-3.6 2.1.8-3.2C4.9 15.1 3.8 13.2 3.8 10.6c0-4 3.8-7.2 8.2-7.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <circle cx="9.2" cy="10.7" r="1.05" fill="currentColor"/>
+      <circle cx="14.8" cy="10.7" r="1.05" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24">
+      <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-sheet" viewBox="0 0 24 24">
+      <rect x="4.2" y="2.8" width="15.6" height="18.4" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M8 9h8M8 12.4h8M8 15.8h8M12 9v6.8" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    </symbol>
+    <symbol id="i-excel" viewBox="0 0 24 24">
+      <rect x="4.2" y="2.8" width="15.6" height="18.4" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="m8.6 8 6.8 8m0-8-6.8 8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-pbi" viewBox="0 0 24 24">
+      <rect x="3.4" y="3.4" width="17.2" height="17.2" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="7" y="12" width="2.6" height="5" rx=".8" fill="currentColor"/>
+      <rect x="10.9" y="9" width="2.6" height="8" rx=".8" fill="currentColor"/>
+      <rect x="14.8" y="6.6" width="2.6" height="10.4" rx=".8" fill="currentColor" opacity=".55"/>
+    </symbol>
+    <symbol id="i-notion" viewBox="0 0 24 24">
+      <rect x="3.4" y="3.4" width="17.2" height="17.2" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M8.2 16.2V7.8l7.6 8.4V7.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M19 12H5m6 7-7-7 7-7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-up" viewBox="0 0 24 24">
+      <path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24">
+      <rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M15 5.5A1.5 1.5 0 0 0 13.5 4H6a2 2 0 0 0-2 2v7.5A1.5 1.5 0 0 0 5.5 15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24">
+      <path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5A8 8 0 1 1 21 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24">
+      <rect x="4" y="8" width="16" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M12 4v4M8.5 14h.01M15.5 14h.01M9.5 17h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+      <path d="M4 20V4M4 20h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <rect x="7.5" y="12" width="3" height="5" rx="1" fill="currentColor"/>
+      <rect x="12.5" y="8" width="3" height="9" rx="1" fill="currentColor"/>
+      <rect x="17.5" y="10" width="3" height="7" rx="1" fill="currentColor" opacity=".5"/>
+    </symbol>
+    <symbol id="i-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <circle cx="12" cy="12" r="1.4" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="هوش‌یار — خانه">
+        <span class="brand-mark">هوش‌یار<span class="brand-dot">.</span></span>
+        <span class="brand-sub">ابزار کار، نه شعار</span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="منوی اصلی">
+        <a href="#services">خدمات</a>
+        <a href="#work">نمونه‌ها</a>
+        <a href="#process">فرآیند</a>
+        <a href="#faq">پرسش‌ها</a>
+        <a class="btn btn-ghost btn-sm nav-cta" href="#contact" data-contact="general">شروع گفت‌وگو</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="باز کردن منو" type="button">
+        <svg class="ico ico-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ico ico-close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span>ظرفیت این ماه: ۲ پروژه</p>
+
+          <h1>
+            ماشین گزارش می‌نویسد.<br />
+            <span class="soft">تو تصمیم می‌گیری.</span>
+          </h1>
+
+          <p class="hero-sub">
+            برای کسب‌وکارهای کوچک ابزار می‌سازیم: گزارش روزانه، پاسخ به مشتری،
+            پیگیری سفارش. در پیام‌رسان خودت کار می‌کند و آموزش نمی‌خواهد.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#contact" data-contact="general">شروع گفت‌وگو</a>
+            <a class="btn btn-ghost" href="#work">دیدن نمونه‌ها</a>
+          </div>
+
+          <div class="channels" aria-label="راه‌های تماس">
+            <a class="ch" data-ch="whatsapp" href="https://wa.me/989120000000">
+              <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> واتساپ
+            </a>
+            <a class="ch" data-ch="telegram" href="https://t.me/hooshyar_demo">
+              <svg class="ico" aria-hidden="true"><use href="#i-tg"/></svg> تلگرام
+            </a>
+            <a class="ch" data-ch="bale" href="https://ble.ir/hooshyar_demo">
+              <svg class="ico" aria-hidden="true"><use href="#i-bale"/></svg> بله
+            </a>
+          </div>
+
+          <dl class="hero-facts">
+            <div><dt>۱ تا ۳ هفته</dt><dd>زمان تحویل</dd></div>
+            <div><dt>۳ ماه</dt><dd>همراهی بعد از تحویل</dd></div>
+            <div><dt>۳ پرداخت</dt><dd>شروع، میانه، تحویل</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hv">
+            <div class="hv-panel">
+              <div class="hv-head">
+                <span class="hv-live"></span>
+                <span class="hv-name">گزارش امروز</span>
+                <span class="hv-time">۰۹:۰۰</span>
+              </div>
+              <div class="hv-rows">
+                <div class="hv-row"><span>فروش</span><b>۱۸٫۲ م</b><i class="up">+۱۲٪</i></div>
+                <div class="hv-row"><span>سفارش</span><b>۹۴</b><i class="up">+۷٪</i></div>
+                <div class="hv-row"><span>مرجوعی</span><b>۳</b><i class="down">−۲</i></div>
+              </div>
+              <svg class="hv-chart" viewBox="0 0 300 70" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="hvFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#e0b173" stop-opacity=".22"/>
+                    <stop offset="100%" stop-color="#e0b173" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 54 L36 45 L72 50 L108 32 L144 39 L180 20 L216 28 L252 13 L288 20 L300 16 L300 70 L0 70 Z" fill="url(#hvFill)"/>
+                <path d="M0 54 L36 45 L72 50 L108 32 L144 39 L180 20 L216 28 L252 13 L288 20 L300 16" fill="none" stroke="#e0b173" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+                <circle cx="252" cy="13" r="3" fill="#0b0d0f" stroke="#e0b173" stroke-width="1.8"/>
+              </svg>
+              <p class="hv-foot">در واتساپ ارسال شد · ۰۹:۰۰</p>
+            </div>
+
+            <div class="hv-bubble">
+              <span>سلام، امروز نوبت خالی دارید؟</span>
+              <span class="out">بله، پنجشنبه ۱۶:۳۰ آزاد است.</span>
+            </div>
+
+            <div class="hv-tag">۲۳ پیام بدون دخالت شما</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TOOLS ================= -->
+    <section class="tools-sec" aria-labelledby="toolsTitle">
+      <div class="container">
+        <div class="tools-head">
+          <h2 id="toolsTitle">به ابزارهایی که همین حالا داری وصل می‌شود.</h2>
+          <p>اتصال از طریق API یا فایل. ابزار فعلی‌ات را عوض نمی‌کنی.</p>
+        </div>
+        <ul class="tools">
+          <li title="واتساپ"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>واتساپ</span></li>
+          <li title="تلگرام"><svg aria-hidden="true"><use href="#i-tg"/></svg><span>تلگرام</span></li>
+          <li title="بله"><svg aria-hidden="true"><use href="#i-bale"/></svg><span>بله</span></li>
+          <li title="اینستاگرام"><svg aria-hidden="true"><use href="#i-ig"/></svg><span>اینستاگرام</span></li>
+          <li title="گوگل شیت"><svg aria-hidden="true"><use href="#i-sheet"/></svg><span>گوگل شیت</span></li>
+          <li title="اکسل"><svg aria-hidden="true"><use href="#i-excel"/></svg><span>اکسل</span></li>
+          <li title="پاور بی‌آی"><svg aria-hidden="true"><use href="#i-pbi"/></svg><span>پاور بی‌آی</span></li>
+          <li title="نوشن"><svg aria-hidden="true"><use href="#i-notion"/></svg><span>نوشن</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= STATEMENT ================= -->
+    <section class="statement">
+      <div class="container">
+        <p class="statement-label">چیزی که به آن اعتقاد داریم</p>
+        <p class="statement-text">
+          ربات نمی‌فروشیم. <span class="accent">ابزار کار</span> می‌سازیم؛
+          چیزی که صبح بازش کنی، کارت را راه بیندازد و اگر خواستی خاموشش کنی.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="sec-label"><span>۰۱</span>خدمات</p>
+            <h2>سه کاری که بیشترین وقت را می‌خورند</h2>
+          </div>
+          <p class="sec-sub">لازم نیست اسم فنی‌شان را بدانی. یکی را انتخاب کن؛ بقیه‌اش را ما ترجمه می‌کنیم.</p>
+        </div>
+
+        <div class="rows">
+          <article class="row row--lead">
+            <div class="row-head">
+              <span class="row-num">۰۱</span>
+              <h3>گزارش روزانه</h3>
+            </div>
+            <div class="row-body">
+              <p>هر صبح، فروش دیروز و کارهای عقب‌افتاده را در پیام‌رسان خودت می‌گیری. دیگر لازم نیست اکسل باز کنی.</p>
+              <ul class="checks">
+                <li>فروش و سفارش دیروز</li>
+                <li>کالاهای رو به اتمام</li>
+                <li>سفارش‌های عقب‌افتاده</li>
+              </ul>
+            </div>
+            <div class="row-actions">
+              <a class="btn btn-sm btn-solid" href="#contact" data-contact="agent">شروع گفت‌وگو</a>
+              <a class="link-arrow" href="#work" data-view-project="store-agent">دیدن نمونه <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="row">
+            <div class="row-head">
+              <span class="row-num">۰۲</span>
+              <h3>پاسخ به مشتری</h3>
+            </div>
+            <div class="row-body">
+              <p>سؤال‌های تکراری را خودش جواب می‌دهد: قیمت، ساعت کاری، نوبت. سؤال سخت را می‌فرستد برای تو.</p>
+              <ul class="checks">
+                <li>پاسخ فارسی و محاوره‌ای</li>
+                <li>ثبت نوبت و درخواست</li>
+                <li>تحویل گفت‌وگوی حساس به انسان</li>
+              </ul>
+            </div>
+            <div class="row-actions">
+              <a class="btn btn-sm btn-solid" href="#contact" data-contact="chatbot">شروع گفت‌وگو</a>
+              <a class="link-arrow" href="#work" data-view-project="clinic-chat">دیدن نمونه <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="row">
+            <div class="row-head">
+              <span class="row-num">۰۳</span>
+              <h3>داشبورد فروش</h3>
+            </div>
+            <div class="row-body">
+              <p>یک صفحه، بدون فرمول. می‌بینی چه چیزی می‌فروشد، چه چیزی نمی‌فروشد و چرا.</p>
+              <ul class="checks">
+                <li>فروش روزانه و ماهانه</li>
+                <li>پرفروش و کم‌فروش</li>
+                <li>مشتری‌های در خطر ریزش</li>
+              </ul>
+            </div>
+            <div class="row-actions">
+              <a class="btn btn-sm btn-solid" href="#contact" data-contact="analytics">شروع گفت‌وگو</a>
+              <a class="link-arrow" href="#work" data-view-project="gym-retention">دیدن نمونه <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CHOOSER ================= -->
+    <section class="section section--alt" id="chooser">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="sec-label"><span>۰۲</span>راهنما</p>
+            <h2>کدام کار بیشتر وقتت را می‌گیرد؟</h2>
+          </div>
+          <p class="sec-sub">یکی را بزن. راهکار و نمونه‌اش را همان‌جا نشان می‌دهیم.</p>
+        </div>
+
+        <div class="chooser">
+          <div class="chooser-list" id="chooserOptions" role="group" aria-label="انتخاب وضعیت"></div>
+          <div class="chooser-out" id="chooserResult" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORK ================= -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="sec-label"><span>۰۳</span>نمونه‌ها</p>
+            <h2>چهار پروژه، با ساختار واقعی</h2>
+          </div>
+          <p class="sec-sub">داده‌ها ساختگی‌اند، ولی روش کار همان است که برای مشتری انجام می‌دهیم. روی هر کارت بزن.</p>
+        </div>
+
+        <div class="work-bar">
+          <div class="filters" id="portfolioFilters" role="group" aria-label="فیلتر نمونه‌ها"></div>
+          <p class="filter-count" id="portfolioCount" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="work-grid" id="portfolioGrid"></div>
+        <noscript><p class="noscript">نمایش نمونه‌ها به جاوااسکریپت نیاز دارد.</p></noscript>
+
+        <p class="demo-note">
+          این چهار پروژه دمو هستند، نه کار مشتری واقعی. نام‌ها و اعداد ساختگی‌اند
+          تا ساختار کار را ببینی، نه ادعای نتیجه.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section class="section section--alt" id="process">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="sec-label"><span>۰۴</span>فرآیند</p>
+            <h2>چهار قدم، کمتر از یک ماه</h2>
+          </div>
+          <p class="sec-sub">در هر قدم می‌دانی چه اتفاقی می‌افتد و قدم بعدی چیست.</p>
+        </div>
+
+        <ol class="steps">
+          <li><span class="step-n">۰۱</span><h3>تماس ۲۰ دقیقه‌ای</h3><p>می‌پرسیم چه کاری وقتت را می‌خورد. اگر راه‌حل ما به کارت نیاید، همان‌جا می‌گوییم.</p></li>
+          <li><span class="step-n">۰۲</span><h3>پیشنهاد یک‌صفحه‌ای</h3><p>محدوده کار، زمان و مبلغ ثابت. بدون بند حقوقی و بدون جلسه‌ی اضافه.</p></li>
+          <li><span class="step-n">۰۳</span><h3>ساخت هفته‌ای</h3><p>هر هفته یک چیز کارکردنی می‌بینی. نظرت را همان‌جا اعمال می‌کنیم.</p></li>
+          <li><span class="step-n">۰۴</span><h3>تحویل و ۳ ماه همراهی</h3><p>آموزش، رفع اشکال، و یک شماره که جواب می‌دهد.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="faq-side">
+          <p class="sec-label"><span>۰۵</span>پرسش‌ها</p>
+          <h2>سؤال‌هایی که قبل از شروع می‌پرسی</h2>
+          <p class="sec-sub">اگر جوابت اینجا نبود، در واتساپ یا تلگرام بپرس. همان روز جواب می‌دهیم.</p>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="contact-label">قدم اول</p>
+          <h2>یک کار را انتخاب کن. همین امروز شروع کنیم.</h2>
+          <p class="contact-sub">بنویس کدام کار وقتت را می‌خورد. جواب: امروز یا فردا.</p>
+        </div>
+        <div class="contact-list">
+          <a class="contact-row" data-ch="whatsapp" href="https://wa.me/989120000000">
+            <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
+            <span><b>واتساپ</b><small>پیام آماده است، فقط بفرست</small></span>
+            <svg class="ico go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="contact-row" data-ch="telegram" href="https://t.me/hooshyar_demo">
+            <svg class="ico" aria-hidden="true"><use href="#i-tg"/></svg>
+            <span><b>تلگرام</b><small>پیام مستقیم به ما</small></span>
+            <svg class="ico go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="contact-row" data-ch="bale" href="https://ble.ir/hooshyar_demo">
+            <svg class="ico" aria-hidden="true"><use href="#i-bale"/></svg>
+            <span><b>بله</b><small>برای کسانی که بله را ترجیح می‌دهند</small></span>
+            <svg class="ico go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <span class="brand-mark">هوش‌یار<span class="brand-dot">.</span></span>
+        <p>ابزار ساده‌ی هوش مصنوعی برای کسب‌وکار کوچک. پروژه‌های کم، تحویل دقیق.</p>
+      </div>
+      <nav class="footer-links" aria-label="لینک‌ها">
+        <a href="#services">خدمات</a>
+        <a href="#work">نمونه‌ها</a>
+        <a href="#process">فرآیند</a>
+        <a href="#faq">پرسش‌ها</a>
+      </nav>
+      <div class="footer-ch">
+        <a data-ch="whatsapp" href="https://wa.me/989120000000">واتساپ</a>
+        <a data-ch="telegram" href="https://t.me/hooshyar_demo">تلگرام</a>
+        <a data-ch="bale" href="https://ble.ir/hooshyar_demo">بله</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">۱۴۰۴</span> هوش‌یار — نمونه نمایشی</p>
+      <p>نمونه‌ها و اعداد ساختگی‌اند.</p>
+    </div>
+  </footer>
+
+  <a class="fab" href="#contact" data-contact="general" aria-label="شروع گفت‌وگو">
+    <svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>
+  </a>
+
+  <!-- ================= CONTACT DIALOG ================= -->
+  <dialog class="cdialog" id="contactDialog" aria-labelledby="cdTitle">
+    <div class="cdialog-inner">
+      <div class="cdialog-head">
+        <div>
+          <p class="cdialog-label">شروع گفت‌وگو</p>
+          <h2 id="cdTitle">از کدام پیام‌رسان می‌نویسی؟</h2>
+        </div>
+        <button class="icon-btn" id="cdClose" type="button" aria-label="بستن">
+          <svg class="ico" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+
+      <div class="cdialog-msg">
+        <p id="cdMsg"></p>
+        <button class="btn btn-ghost btn-sm" id="cdCopy" type="button">
+          <svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>
+          کپی پیام
+        </button>
+      </div>
+
+      <div class="cdialog-channels">
+        <a data-open-ch="whatsapp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><b>واتساپ</b><small>پیام آماده ارسال می‌شود</small></a>
+        <a data-open-ch="telegram"><svg class="ico" aria-hidden="true"><use href="#i-tg"/></svg><b>تلگرام</b><small>پیام بالا را بفرست</small></a>
+        <a data-open-ch="bale"><svg class="ico" aria-hidden="true"><use href="#i-bale"/></svg><b>بله</b><small>پیام بالا را بفرست</small></a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ================= PROJECT MODAL ================= -->
+  <dialog class="modal" id="projectModal" aria-labelledby="modalTitle">
+    <div class="modal-inner">
+      <div class="modal-head">
+        <div>
+          <span class="modal-badge">پروژه دمو</span>
+          <h2 id="modalTitle"></h2>
+          <p class="modal-biz" id="modalBiz"></p>
+        </div>
+        <button class="icon-btn" id="modalClose" type="button" aria-label="بستن">
+          <svg class="ico" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <div class="modal-visual" id="modalVisual"></div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot">
+        <a class="btn btn-solid" id="modalCta" href="#contact">شروع گفت‌وگو</a>
+        <button class="btn btn-ghost" id="modalDismiss" type="button">بستن</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
