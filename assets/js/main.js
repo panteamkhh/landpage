@@ -113,171 +113,21 @@
     });
   }
 
-  /* ---------------- ماکاپ نمونه‌ها ---------------- */
-  function frame(inner, label) {
-    return (
-      '<svg class="pc-svg" viewBox="0 0 640 400" role="img" aria-label="' + label +
-      '" preserveAspectRatio="xMidYMid slice"><rect width="640" height="400" fill="#0e1114"/>' +
-      inner + "</svg>"
-    );
-  }
-  function rect(x, y, w, h, r, cls) {
-    return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="' + r + '" class="' + cls + '"/>';
-  }
-  function txt(x, y, s, cls, anchor, size) {
-    return '<text x="' + x + '" y="' + y + '" class="' + (cls || "") + '"' +
-      (anchor ? ' text-anchor="' + anchor + '"' : "") +
-      (size ? ' font-size="' + size + '"' : "") + ">" + s + "</text>";
-  }
-  function bars(x0, baseline, count, w, gap, heights, hiFrom, hiTo) {
-    let out = "";
-    for (let i = 0; i < count; i++) {
-      const h = heights[i % heights.length];
-      const hi = i >= hiFrom && i <= hiTo;
-      out += rect(x0 + i * (w + gap), baseline - h, w, h, 3, hi ? "sv-bar-hi" : "sv-bar");
-    }
-    return out;
+  /* ---------------- تصاویر نمونه‌ها ---------------- */
+  const IMGS = {
+    gym: "assets/img/work-gym.jpg",
+    chat: "assets/img/work-chat.jpg",
+    agent: "assets/img/work-agent.jpg",
+    restaurant: "assets/img/work-restaurant.jpg",
+  };
+
+  function imageFor(p) {
+    return IMGS[p.visual] || IMGS.gym;
   }
 
-  function visualGym() {
-    const kpis = [
-      { x: 44, l: "تمدید این ماه", v: "۵۸٪", c: "sv-accent" },
-      { x: 232, l: "عضو در خطر", v: "۱۲۷", c: "sv-ink" },
-      { x: 420, l: "حضور امروز", v: "۵۴", c: "sv-ink" },
-    ].map(function (k) {
-      return rect(k.x, 96, 176, 66, 9, "sv-surface") +
-        txt(k.x + 14, 120, k.l, "sv-mut", "start", 10.5) +
-        txt(k.x + 14, 148, k.v, "sv-bold " + k.c, "start", 20);
-    }).join("");
-
-    const heights = [38, 52, 44, 68, 58, 82, 62, 74];
-
-    return frame(
-      rect(24, 24, 592, 352, 12, "sv-panel") +
-        txt(592, 54, "باشگاه پالس", "sv-ink sv-bold", "end", 15) +
-        txt(592, 73, "۶۴۰ عضو · این ماه", "sv-mut", "end", 10) +
-        kpis +
-        '<circle cx="150" cy="238" r="46" fill="none" stroke="#2a323a" stroke-width="13"/>' +
-        '<circle cx="150" cy="238" r="46" fill="none" stroke="#e0b173" stroke-width="13" stroke-linecap="round" stroke-dasharray="168 289" transform="rotate(-90 150 238)"/>' +
-        txt(150, 242, "۵۸٪", "sv-ink sv-bold", "middle", 20) +
-        txt(150, 262, "نرخ تمدید", "sv-mut", "middle", 9.5) +
-        txt(150, 316, "۱۲۷ عضو در خطر", "sv-mut", "middle", 10) +
-        bars(280, 300, 8, 22, 16, heights, 5, 7) +
-        txt(280, 316, "حضور هفته", "sv-mut", "start", 10) +
-        txt(596, 316, "شنبه تا جمعه", "sv-mut", "end", 10),
-      "داشبورد ریزش باشگاه"
-    );
-  }
-
-  function visualChat() {
-    const b = (x, y, w, h, cls) => rect(x, y, w, h, 12, cls);
-
-    return frame(
-      rect(38, 150, 116, 62, 10, "sv-surface") +
-        txt(146, 172, "نوبت ثبت شد", "sv-ink sv-bold", "end", 10.5) +
-        txt(146, 190, "پنجشنبه ۱۶:۳۰", "sv-mut", "end", 10) +
-        rect(38, 228, 116, 62, 10, "sv-surface") +
-        txt(146, 250, "زمان پاسخ", "sv-mut", "end", 10) +
-        txt(146, 270, "۱۱ ثانیه", "sv-accent sv-bold", "end", 12) +
-
-      rect(176, 24, 288, 352, 16, "sv-panel") +
-        '<path d="M192 24h256a16 16 0 0 1 16 16v32H176V40a16 16 0 0 1 16-16z" fill="#171c21"/>' +
-        '<circle cx="432" cy="48" r="13" fill="#222a31"/>' +
-        txt(432, 52, "آ", "sv-ink sv-bold", "middle", 10) +
-        txt(408, 45, "کلینیک آرنیکا", "sv-ink sv-bold", "end", 11.5) +
-        txt(408, 61, "پاسخ خودکار", "sv-mut", "end", 9) +
-        '<circle cx="416" cy="57" r="2.5" class="sv-ok"/>' +
-
-        b(298, 88, 146, 30, "sv-bubble-in") +
-        txt(432, 107, "قیمت لیزر چنده؟", "sv-ink", "end", 10) +
-        b(200, 130, 244, 48, "sv-bubble-out") +
-        txt(432, 150, "برای ناحیه صورت، هر جلسه", "sv-ink", "end", 10) +
-        txt(432, 166, "۲٫۸ میلیون تومان است.", "sv-ink", "end", 10) +
-        b(286, 190, 158, 30, "sv-bubble-in") +
-        txt(432, 209, "نوبت دارید؟", "sv-ink", "end", 10) +
-        b(200, 232, 244, 48, "sv-bubble-out") +
-        txt(432, 252, "پنجشنبه ۱۶:۳۰ یا", "sv-ink", "end", 10) +
-        txt(432, 268, "شنبه ۱۱:۰۰ آزاد است.", "sv-ink", "end", 10) +
-        b(224, 292, 220, 48, "sv-bubble-in") +
-        txt(432, 312, "نام و شماره‌ات را بنویس", "sv-ink", "end", 10) +
-        txt(432, 328, "تا ثبت کنم.", "sv-ink", "end", 10) +
-        b(212, 348, 54, 14, "sv-surface") +
-        '<circle cx="230" cy="355" r="2" class="sv-mut"/><circle cx="240" cy="355" r="2" class="sv-mut"/><circle cx="250" cy="355" r="2" class="sv-mut"/>',
-      "چت‌بات کلینیک زیبایی"
-    );
-  }
-
-  function visualAgent() {
-    const steps = [
-      { y: 168, t: "ثبت سفارش", s: "۰۹:۱۲" },
-      { y: 216, t: "تحویل به پست", s: "دیروز" },
-      { y: 264, t: "در مسیر", s: "امروز" },
-    ].map(function (s, i) {
-      return '<circle cx="76" cy="' + s.y + '" r="6" fill="' + (i < 2 ? "#e0b173" : "#2a323a") + '"/>' +
-        txt(96, s.y + 4, s.t, i < 2 ? "sv-ink" : "sv-mut", "start", 11) +
-        txt(314, s.y + 4, s.s, "sv-mut", "end", 9.5) +
-        (i < 2 ? '<path d="M76 ' + (s.y + 8) + 'v32" stroke="#2a323a" stroke-width="1.5" stroke-dasharray="3 3"/>' : "");
-    }).join("");
-
-    return frame(
-      rect(24, 24, 300, 352, 12, "sv-panel") +
-        txt(304, 56, "سفارش ۱۴۰۴۲۲۸", "sv-ink sv-bold", "end", 13) +
-        txt(304, 76, "مشتری: سارا م.", "sv-mut", "end", 10) +
-        rect(44, 96, 260, 34, 8, "sv-surface") +
-        txt(60, 118, "وضعیت", "sv-mut", "start", 10) +
-        txt(288, 118, "در مسیر", "sv-accent sv-bold", "end", 11) +
-        steps +
-        rect(44, 320, 260, 36, 8, "sv-surface") +
-        txt(288, 343, "کد رهگیری ارسال شد", "sv-mut", "end", 10) +
-
-        rect(348, 24, 268, 352, 12, "sv-panel") +
-        txt(596, 52, "پاسخ ایجنت", "sv-ink sv-bold", "end", 12) +
-        rect(366, 74, 232, 30, 10, "sv-bubble-in") +
-        txt(586, 93, "سفارشم کجاست؟", "sv-ink", "end", 10) +
-        rect(366, 114, 232, 62, 10, "sv-bubble-out") +
-        txt(586, 136, "سفارشت دیروز تحویل پست", "sv-ink", "end", 10) +
-        txt(586, 152, "شده و امروز در مسیر است.", "sv-ink", "end", 10) +
-        txt(586, 168, "کد رهگیری: ۲۴۱۸", "sv-ink", "end", 10) +
-        rect(366, 188, 232, 30, 10, "sv-bubble-in") +
-        txt(586, 207, "مرجوعی چطور؟", "sv-ink", "end", 10) +
-        rect(366, 230, 232, 46, 10, "sv-bubble-out") +
-        txt(586, 250, "تا ۷ روز، از پروفایل", "sv-ink", "end", 10) +
-        txt(586, 266, "خودت ثبت کن.", "sv-ink", "end", 10) +
-        txt(596, 330, "۶۲٪ بدون پشتیبان", "sv-mut", "end", 10) +
-        txt(368, 330, "پاسخ زیر ۱ دقیقه", "sv-accent", "start", 10),
-      "ایجنت پیگیری سفارش"
-    );
-  }
-
-  function visualRestaurant() {
-    const heights = [22, 30, 40, 28, 54, 76, 62, 82, 58, 66, 40, 26];
-    return frame(
-      rect(24, 24, 592, 352, 12, "sv-panel") +
-        txt(592, 54, "رستوران ونک", "sv-ink sv-bold", "end", 15) +
-        txt(592, 73, "۹۰ روز گذشته", "sv-mut", "end", 10) +
-        '<circle cx="150" cy="188" r="48" fill="none" stroke="#2a323a" stroke-width="13"/>' +
-        '<circle cx="150" cy="188" r="48" fill="none" stroke="#e0b173" stroke-width="13" stroke-linecap="round" stroke-dasharray="174 302" transform="rotate(-90 150 188)"/>' +
-        txt(150, 192, "۶۲٪", "sv-ink sv-bold", "middle", 20) +
-        txt(150, 212, "غذای اصلی", "sv-mut", "middle", 9.5) +
-        txt(150, 266, "سهم درآمد هر دسته", "sv-mut", "middle", 10) +
-        txt(280, 110, "ساعات شلوغی", "sv-mut", "start", 10) +
-        bars(280, 250, 12, 20, 12, heights, 5, 8) +
-        txt(280, 275, "۱۲", "sv-mut", "start", 9) +
-        txt(596, 275, "۲۳", "sv-mut", "end", 9) +
-        rect(280, 300, 316, 40, 8, "sv-surface") +
-        txt(296, 325, "پیشنهاد: حذف ۵ آیتم کم‌فروش", "sv-accent", "start", 10) +
-        txt(580, 325, "۲۳٪ دورریز کمتر", "sv-mut", "end", 10),
-      "داشبورد رستوران"
-    );
-  }
-
-  function visualFor(p) {
-    switch (p.visual) {
-      case "chat": return visualChat();
-      case "agent": return visualAgent();
-      case "restaurant": return visualRestaurant();
-      default: return visualGym();
-    }
+  function mediaFor(p) {
+    return '<img class="case-img" src="' + imageFor(p) + '" alt="نمونه تصویری: ' + p.title +
+      '" width="1280" height="800" loading="lazy" decoding="async">';
   }
 
   /* ---------------- نمونه‌ها ---------------- */
@@ -292,7 +142,7 @@
     return (
       '<article class="case' + lead + '" data-category="' + p.category + '">' +
         '<button type="button" class="case-btn" data-open="' + p.id + '" aria-haspopup="dialog">' +
-          '<span class="case-media">' + visualFor(p) +
+          '<span class="case-media">' + mediaFor(p) +
             '<span class="case-badge">دمو</span>' +
           "</span>" +
           '<span class="case-body">' +
@@ -356,7 +206,7 @@
     const t = $("#modalTitle"), b = $("#modalBiz"), v = $("#modalVisual"), body = $("#modalBody"), cta = $("#modalCta");
     if (t) t.textContent = p.title;
     if (b) b.textContent = p.business;
-    if (v) v.innerHTML = visualFor(p);
+    if (v) v.innerHTML = mediaFor(p);
 
     if (body) {
       body.innerHTML =
