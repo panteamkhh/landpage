@@ -138,7 +138,7 @@
   function projectCard(p, i) {
     const n = toFa(i + 1);
     const num = n.length < 2 ? "۰" + n : n;
-    const lead = i === 0 ? " case--lead" : "";
+    const lead = i === 0 ? " case--lead" : i === 3 ? " case--wide" : "";
     return (
       '<article class="case' + lead + '" data-category="' + p.category + '">' +
         '<button type="button" class="case-btn" data-open="' + p.id + '" aria-haspopup="dialog">' +
@@ -177,6 +177,8 @@
       c.classList.toggle("is-active", on);
       c.setAttribute("aria-pressed", String(on));
     });
+    grid.setAttribute("data-mode", id === "all" ? "all" : "filtered");
+
     let shown = 0;
     $$(".case", grid).forEach(function (card) {
       const match = id === "all" || card.getAttribute("data-category") === id;
@@ -431,6 +433,39 @@
     }
   }
 
+
+  function initReveal() {
+    if (!("IntersectionObserver" in window)) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const els = $$(".sec-head, .svc, .case, .steps li, .problems-copy, .pain-cards, .eco-board, .why-grid li");
+    if (!els.length) return;
+
+    const io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -30px 0px" }
+    );
+
+    els.forEach(function (el, i) {
+      el.classList.add("reveal");
+      el.style.transitionDelay = (i % 3) * 70 + "ms";
+      io.observe(el);
+    });
+
+    window.setTimeout(function () {
+      $$(".reveal:not(.is-in)").forEach(function (el) {
+        el.classList.add("is-in");
+      });
+    }, 2600);
+  }
+
   function initYear() {
     const el = $("#year");
     if (!el) return;
@@ -450,6 +485,7 @@
     initHeader();
     initYear();
     bindEvents();
+    initReveal();
   }
 
   if (document.readyState === "loading") {

@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=5" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316151a'/%3E%3Cpath d='M10 22V10h2.6l6.8 7.4V10H22v12h-2.6l-6.8-7.4V22H10z' fill='%23faf7f0'/%3E%3Ccircle cx='24' cy='24' r='1.6' fill='%23ff7a5c'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -153,6 +153,15 @@
       <rect x="16.8" y="12.4" width="4.4" height="6.2" rx="2"/>
       <path d="M19 18.6v.4a2.6 2.6 0 0 1-2.6 2.6H13.4"/>
     </symbol>
+
+    <symbol id="b-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="12" cy="5.8" rx="6.8" ry="3"/>
+      <path d="M5.2 5.8v12.4c0 1.7 3 3 6.8 3s6.8-1.3 6.8-3V5.8"/>
+      <path d="M5.2 12c0 1.7 3 3 6.8 3s6.8-1.3 6.8-3"/>
+    </symbol>
+    <symbol id="b-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m8.6 8.4-4 3.6 4 3.6M15.4 8.4l4 3.6-4 3.6M13.4 5.6l-2.8 12.8"/>
+    </symbol>
   </svg>
 
   <header class="site-header" id="siteHeader">
@@ -229,33 +238,78 @@
         </div>
 
         <div class="hero-visual">
-          <figure class="hero-shot">
-            <img src="assets/img/hero-shot.jpg" alt="نمونه‌ی یک داشبورد تحلیلی" width="1280" height="800" />
-          </figure>
-          <span class="hero-tag hero-tag--a">نمونه نمایشی</span>
-          <span class="hero-tag hero-tag--b">داشبورد فروش</span>
+          <div class="stage" aria-hidden="true">
+            <div class="dash">
+              <div class="dash-bar">
+                <span class="dash-dots"><i></i><i></i><i></i></span>
+                <span class="dash-title">داشبورد فروش</span>
+                <span class="dash-live"><i></i>زنده</span>
+              </div>
+              <img src="assets/img/hero-shot.jpg" alt="" width="1280" height="800" />
+            </div>
+
+            <div class="float float--kpi">
+              <span class="float-label">فروش این هفته</span>
+              <div class="float-value"><strong>۱۸٫۲ م</strong><em>+۱۲٪</em></div>
+              <svg class="float-spark" viewBox="0 0 120 34" preserveAspectRatio="none">
+                <path class="spark-line" d="M0 28 L20 22 L40 25 L60 14 L80 18 L100 8 L120 12" />
+              </svg>
+            </div>
+
+            <div class="float float--insight">
+              <span class="float-icon"><svg class="ico"><use href="#b-bubble"/></svg></span>
+              <p><b>بینش امروز</b><span>پنجشنبه‌ها پرفروش‌ترین روز هفته است.</span></p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ================= VALUE / TOOLS ================= -->
-    <section class="tools-sec" aria-labelledby="toolsTitle">
+    <section class="eco" id="tools" aria-labelledby="toolsTitle">
       <div class="container">
         <div class="tools-head">
           <h2 id="toolsTitle">لازم نیست کسب‌وکارت را از نو بسازی.</h2>
           <p>ابزارهایی را که همین حالا استفاده می‌کنی به هم وصل می‌کنیم تا اطلاعاتت بهتر جریان پیدا کند و کارها با دخالت دستی کمتری انجام شوند.</p>
         </div>
 
-        <ul class="tools">
-          <li title="واتساپ"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>واتساپ</span></li>
-          <li title="تلگرام"><svg aria-hidden="true"><use href="#i-tg"/></svg><span>تلگرام</span></li>
-          <li title="بله"><svg aria-hidden="true"><use href="#i-bale"/></svg><span>بله</span></li>
-          <li title="اینستاگرام"><svg aria-hidden="true"><use href="#i-ig"/></svg><span>اینستاگرام</span></li>
-          <li title="گوگل شیت"><svg aria-hidden="true"><use href="#i-sheet"/></svg><span>گوگل شیت</span></li>
-          <li title="اکسل"><svg aria-hidden="true"><use href="#i-excel"/></svg><span>اکسل</span></li>
-          <li title="پاور بی‌آی"><svg aria-hidden="true"><use href="#i-pbi"/></svg><span>پاور بی‌آی</span></li>
-          <li title="نوشن"><svg aria-hidden="true"><use href="#i-notion"/></svg><span>نوشن</span></li>
-        </ul>
+        <div class="eco-board">
+          <div class="eco-col">
+            <span class="eco-col-title">منابع داده</span>
+            <ul class="eco-chips">
+              <li><svg aria-hidden="true"><use href="#i-excel"/></svg>اکسل</li>
+              <li><svg aria-hidden="true"><use href="#i-sheet"/></svg>گوگل شیت</li>
+              <li><svg aria-hidden="true"><use href="#b-db"/></svg>SQL</li>
+              <li><svg aria-hidden="true"><use href="#b-code"/></svg>Python</li>
+              <li><svg aria-hidden="true"><use href="#i-wa"/></svg>واتساپ</li>
+              <li><svg aria-hidden="true"><use href="#i-ig"/></svg>اینستاگرام</li>
+            </ul>
+          </div>
+
+          <div class="eco-arrow" aria-hidden="true">
+            <svg viewBox="0 0 56 24"><path d="M52 12H6m6-6-6 6 6 6"/></svg>
+          </div>
+
+          <div class="eco-core">
+            <span class="eco-core-glow" aria-hidden="true"></span>
+            <span class="eco-core-mark">هوش‌یار<span class="brand-dot">.</span></span>
+            <span class="eco-core-sub">پردازش · اتوماسیون · هوش مصنوعی</span>
+          </div>
+
+          <div class="eco-arrow" aria-hidden="true">
+            <svg viewBox="0 0 56 24"><path d="M52 12H6m6-6-6 6 6 6"/></svg>
+          </div>
+
+          <div class="eco-col eco-col--out">
+            <span class="eco-col-title">خروجی برای کسب‌وکار</span>
+            <ul class="eco-chips">
+              <li><svg aria-hidden="true"><use href="#b-dashboard"/></svg>داشبورد مدیریتی</li>
+              <li><svg aria-hidden="true"><use href="#b-checklist"/></svg>گزارش روزانه</li>
+              <li><svg aria-hidden="true"><use href="#b-bubble"/></svg>پاسخ خودکار</li>
+              <li><svg aria-hidden="true"><use href="#b-flow"/></svg>پیگیری سفارش</li>
+            </ul>
+          </div>
+        </div>
 
         <p class="tools-note">
           با ابزارهایی مثل Excel، Google Sheets، پیام‌رسان‌ها و سیستم‌های گزارش‌گیری؛
@@ -324,77 +378,100 @@
           <p class="sec-sub">از مدیریت اطلاعات و گزارش فروش تا پاسخ‌گویی به مشتریان؛ راهکاری انتخاب کن که یک مشکل واقعی از کسب‌وکارت را حل کند.</p>
         </div>
 
-        <div class="rows">
-          <article class="row">
-            <div class="row-head">
-              <span class="row-icon row-icon--mint"><svg class="ico" aria-hidden="true"><use href="#b-dashboard"/></svg></span>
-              <div>
-                <span class="row-num">۰۱</span>
-                <h3>تحلیل داده و گزارش‌گیری</h3>
+        <div class="svc-grid">
+          <article class="svc">
+            <div class="svc-media svc-media--mint" aria-hidden="true">
+              <div class="mini-dash">
+                <div class="mini-dash-top"><i></i><i></i><i></i><span>فروش هفته</span></div>
+                <div class="mini-kpis">
+                  <div><small>فروش</small><b>۱۲۴٫۵م</b></div>
+                  <div><small>سفارش</small><b>۱٬۸۴۲</b></div>
+                </div>
+                <div class="mini-chart">
+                  <i style="--h:38%"></i><i style="--h:54%"></i><i style="--h:44%"></i>
+                  <i style="--h:68%"></i><i style="--h:58%"></i><i style="--h:84%"></i><i style="--h:72%"></i>
+                </div>
               </div>
             </div>
-            <div class="row-body">
+            <div class="svc-body">
+              <div class="svc-head">
+                <span class="svc-icon"><svg class="ico" aria-hidden="true"><use href="#b-dashboard"/></svg></span>
+                <span class="row-num">۰۱</span>
+              </div>
+              <h3>تحلیل داده و گزارش‌گیری</h3>
               <p>همیشه بدان کسب‌وکارت چه وضعیتی دارد. فروش، سفارش‌ها و عملکرد کسب‌وکارت را در گزارش‌ها و داشبوردهای ساده ببین.</p>
               <ul class="checks">
                 <li>داشبورد فروش در یک صفحه</li>
                 <li>پرفروش و کم‌فروش</li>
                 <li>گزارش آماده برای تصمیم‌گیری</li>
               </ul>
-            </div>
-            <div class="row-actions">
-              <a class="btn btn-sm btn-solid" href="#contact" data-contact="analytics">مشاوره رایگان</a>
-              <a class="link-arrow" href="#work" data-view-project="gym-retention">مشاهده نمونه داشبورد <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <div class="svc-actions">
+                <a class="btn btn-sm btn-solid" href="#contact" data-contact="analytics">مشاوره رایگان</a>
+                <a class="link-arrow" href="#work" data-view-project="gym-retention">مشاهده نمونه داشبورد <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
             </div>
           </article>
 
-          <article class="row">
-            <div class="row-head">
-              <span class="row-icon row-icon--sky"><svg class="ico" aria-hidden="true"><use href="#b-flow"/></svg></span>
-              <div>
-                <span class="row-num">۰۲</span>
-                <h3>اتوماسیون کسب‌وکار</h3>
+          <article class="svc">
+            <div class="svc-media svc-media--sky" aria-hidden="true">
+              <div class="mini-flow">
+                <span class="wf-node"><i class="wf-dot"></i>فروشگاه</span>
+                <span class="wf-link"></span>
+                <span class="wf-node wf-node--core"><i class="wf-dot"></i>اتوماسیون</span>
+                <span class="wf-link"></span>
+                <span class="wf-node wf-node--out"><i class="wf-dot"></i>پیام</span>
               </div>
             </div>
-            <div class="row-body">
+            <div class="svc-body">
+              <div class="svc-head">
+                <span class="svc-icon"><svg class="ico" aria-hidden="true"><use href="#b-flow"/></svg></span>
+                <span class="row-num">۰۲</span>
+              </div>
+              <h3>اتوماسیون کسب‌وکار</h3>
               <p>کارهای تکراری را به سیستم بسپار. ثبت اطلاعات، پیگیری سفارش و انتقال داده بین ابزارها خودکار می‌شود.</p>
               <ul class="checks">
                 <li>انتقال خودکار اطلاعات</li>
                 <li>گزارش روزانه بدون کار دستی</li>
                 <li>پیگیری سفارش‌های باز</li>
               </ul>
-            </div>
-            <div class="row-actions">
-              <a class="btn btn-sm btn-solid" href="#contact" data-contact="agent">مشاوره رایگان</a>
-              <a class="link-arrow" href="#work" data-view-project="store-agent">مشاهده نمونه اتوماسیون <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <div class="svc-actions">
+                <a class="btn btn-sm btn-solid" href="#contact" data-contact="agent">مشاوره رایگان</a>
+                <a class="link-arrow" href="#work" data-view-project="store-agent">مشاهده نمونه اتوماسیون <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
             </div>
           </article>
 
-          <article class="row">
-            <div class="row-head">
-              <span class="row-icon row-icon--lilac"><svg class="ico" aria-hidden="true"><use href="#b-bubble"/></svg></span>
-              <div>
-                <span class="row-num">۰۳</span>
-                <h3>دستیار هوشمند مشتریان</h3>
+          <article class="svc">
+            <div class="svc-media svc-media--lilac" aria-hidden="true">
+              <div class="mini-chat">
+                <span class="mc in">سلام، نوبت خالی دارید؟</span>
+                <span class="mc out">پنجشنبه ۱۶:۳۰ آزاد است. ثبت کنم؟</span>
+                <span class="mc typing"><i></i><i></i><i></i></span>
               </div>
             </div>
-            <div class="row-body">
+            <div class="svc-body">
+              <div class="svc-head">
+                <span class="svc-icon"><svg class="ico" aria-hidden="true"><use href="#b-bubble"/></svg></span>
+                <span class="row-num">۰۳</span>
+              </div>
+              <h3>دستیار هوشمند مشتریان</h3>
               <p>مشتریانت را بدون انتظار طولانی پاسخ بده. یک دستیار برای سؤال‌های پرتکرار، معرفی خدمات و ثبت درخواست.</p>
               <ul class="checks">
                 <li>پاسخ فارسی و محاوره‌ای</li>
                 <li>ثبت نوبت و درخواست</li>
                 <li>ارجاع موارد پیچیده به خودت</li>
               </ul>
-            </div>
-            <div class="row-actions">
-              <a class="btn btn-sm btn-solid" href="#contact" data-contact="chatbot">مشاوره رایگان</a>
-              <a class="link-arrow" href="#work" data-view-project="clinic-chat">مشاهده نمونه دستیار <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <div class="svc-actions">
+                <a class="btn btn-sm btn-solid" href="#contact" data-contact="chatbot">مشاوره رایگان</a>
+                <a class="link-arrow" href="#work" data-view-project="clinic-chat">مشاهده نمونه دستیار <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= SOLUTION FINDER ================= -->
+
     <section class="section section--mint" id="chooser">
       <div class="container">
         <div class="sec-head">
@@ -458,10 +535,22 @@
         </div>
 
         <ol class="steps">
-          <li><span class="step-n">۰۱</span><h3>شناخت نیاز</h3><p>درباره فرایند فعلی، مشکلات و انتظاراتت صحبت می‌کنیم.</p></li>
-          <li><span class="step-n">۰۲</span><h3>طراحی راهکار</h3><p>راهکار، هزینه، زمان و محدوده پروژه را مشخص می‌کنیم.</p></li>
-          <li><span class="step-n">۰۳</span><h3>توسعه و تست</h3><p>ابزار را می‌سازیم و در شرایط واقعی آزمایش می‌کنیم.</p></li>
-          <li><span class="step-n">۰۴</span><h3>تحویل و پشتیبانی</h3><p>راهکار را تحویل می‌دهیم، آموزش می‌دهیم و همراهت می‌مانیم.</p></li>
+          <li>
+            <div class="step-top"><span class="step-icon"><svg class="ico" aria-hidden="true"><use href="#b-bubble"/></svg></span><span class="step-n">۰۱</span></div>
+            <h3>شناخت نیاز</h3><p>درباره فرایند فعلی، مشکلات و انتظاراتت صحبت می‌کنیم.</p>
+          </li>
+          <li>
+            <div class="step-top"><span class="step-icon"><svg class="ico" aria-hidden="true"><use href="#b-dashboard"/></svg></span><span class="step-n">۰۲</span></div>
+            <h3>طراحی راهکار</h3><p>راهکار، هزینه، زمان و محدوده پروژه را مشخص می‌کنیم.</p>
+          </li>
+          <li>
+            <div class="step-top"><span class="step-icon"><svg class="ico" aria-hidden="true"><use href="#b-code"/></svg></span><span class="step-n">۰۳</span></div>
+            <h3>توسعه و تست</h3><p>ابزار را می‌سازیم و در شرایط واقعی آزمایش می‌کنیم.</p>
+          </li>
+          <li>
+            <div class="step-top"><span class="step-icon"><svg class="ico" aria-hidden="true"><use href="#b-headset"/></svg></span><span class="step-n">۰۴</span></div>
+            <h3>تحویل و پشتیبانی</h3><p>راهکار را تحویل می‌دهیم، آموزش می‌دهیم و همراهت می‌مانیم.</p>
+          </li>
         </ol>
 
         <div class="steps-cta">
@@ -521,6 +610,13 @@
 
     <!-- ================= FINAL CTA ================= -->
     <section class="contact" id="contact">
+      <svg class="cta-lines" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-40 330C160 300 210 210 380 240s220 90 380 40 230-110 480-90"/>
+        <path d="M-40 380c220-40 300 20 460-40s240-90 400-20 260 60 420 10"/>
+        <path d="M-40 120c180 60 320 10 470 70s250 60 400 0 240-80 420-40"/>
+        <circle cx="380" cy="240" r="4"/><circle cx="760" cy="280" r="4"/><circle cx="1010" cy="170" r="4"/>
+      </svg>
+
       <div class="container contact-grid">
         <div>
           <p class="contact-label">قدم اول</p>
@@ -631,7 +727,7 @@
     </div>
   </dialog>
 
-  <script src="assets/js/content.js?v=4"></script>
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/content.js?v=5"></script>
+  <script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
