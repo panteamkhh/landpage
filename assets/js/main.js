@@ -143,7 +143,7 @@
       '<article class="case' + lead + '" data-category="' + p.category + '">' +
         '<button type="button" class="case-btn" data-open="' + p.id + '" aria-haspopup="dialog">' +
           '<span class="case-media">' + mediaFor(p) +
-            '<span class="case-badge">دمو</span>' +
+            '<span class="case-badge">نمونه نمایشی</span>' +
           "</span>" +
           '<span class="case-body">' +
             '<span class="case-kicker"><span class="case-num">' + num + "</span>" +
@@ -214,13 +214,11 @@
         '<div class="modal-block"><h3>راهکار</h3><ul class="checks">' +
           p.solution.map(function (s) { return "<li>" + s + "</li>"; }).join("") +
         "</ul></div>" +
-        '<div class="modal-metrics">' +
-          p.metrics.map(function (m) {
-            return '<div class="metric"><b>' + m.value + "</b><span>" + m.label + "</span></div>";
-          }).join("") +
-        "</div>" +
-        '<div class="modal-block"><h3>چه چیزی تغییر می‌کند</h3><ul class="checks">' +
-          p.benefits.map(function (s) { return "<li>" + s + "</li>"; }).join("") +
+        '<div class="modal-block"><h3>چه کاری انجام می‌دهد</h3><ul class="checks">' +
+          p.outputs.map(function (s) { return "<li>" + s + "</li>"; }).join("") +
+        "</ul></div>" +
+        '<div class="modal-block"><h3>ارزش عملی</h3><ul class="checks">' +
+          p.value.map(function (s) { return "<li>" + s + "</li>"; }).join("") +
         "</ul></div>" +
         '<p class="modal-note">این پروژه دمو است. نام کسب‌وکار و اعداد ساختگی‌اند و ادعای نتیجه واقعی نیستند.</p>';
     }
@@ -273,7 +271,7 @@
     const meta = META[s.service] || { title: "راهکار" };
     chooserOut.innerHTML =
       '<div class="chooser-card">' +
-        '<p class="chooser-kicker">پیشنهاد</p>' +
+        '<p class="chooser-kicker">راهکار پیشنهادی</p>' +
         "<h3>" + meta.title + "</h3>" +
         "<p>" + s.why + "</p>" +
         '<ul class="checks">' + s.points.map(function (p) { return "<li>" + p + "</li>"; }).join("") + "</ul>" +

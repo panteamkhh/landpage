@@ -295,9 +295,9 @@ img { max-width: 100%; display: block; }
 }
 
 .hero h1 {
-  font-size: clamp(2.05rem, 3.9vw, 3.15rem);
+  font-size: clamp(2rem, 3.6vw, 2.95rem);
   font-weight: 800;
-  line-height: 1.22;
+  line-height: 1.28;
   margin-block: 20px 18px;
 }
 
@@ -1635,6 +1635,203 @@ img { max-width: 100%; display: block; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }
   .case-biz { display: none; }
+}
+
+/* ---------- افزوده‌های نسخه ۲ ---------- */
+.hero-tags-wrap,
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-block-start: 14px;
+}
+
+.hero-tags li {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--white);
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.hero-note {
+  margin-block-start: 10px;
+  font-size: 11.5px;
+  color: var(--muted-2);
+}
+
+.tools-note {
+  margin-block-start: 12px;
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted-2);
+  max-width: 82ch;
+}
+
+/* مسئله */
+.problems {
+  background: var(--peach);
+  padding-block: 72px;
+  border-block-end: 1px solid var(--line-2);
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.problems h2 {
+  font-size: clamp(1.6rem, 3.1vw, 2.35rem);
+  line-height: 1.3;
+  margin-block: 0 14px;
+}
+
+.problems-note {
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--ink-2);
+  max-width: 44ch;
+}
+
+.promise {
+  margin-block-start: 22px;
+  padding-block-start: 18px;
+  border-block-start: 1px solid rgba(22, 21, 26, 0.25);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.9;
+  color: var(--ink);
+  max-width: 46ch;
+}
+
+.pain-list {
+  display: grid;
+  border-block-start: 1px solid rgba(22, 21, 26, 0.3);
+}
+
+.pain-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-block: 16px;
+  border-block-end: 1px solid rgba(22, 21, 26, 0.3);
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.75;
+}
+
+.pain-list li::before {
+  content: "—";
+  color: var(--coral-ink);
+  flex: none;
+}
+
+/* فرآیند */
+.steps-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-block-start: 28px;
+}
+
+.steps-cta span {
+  font-size: 11.5px;
+  color: var(--ink-2);
+}
+
+/* چرا هوش‌یار */
+.section--butter { background: var(--butter); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.why-grid li {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 12px;
+  padding: 18px 16px;
+}
+
+.why-num {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--coral-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.why-grid h3 {
+  font-size: 0.95rem;
+  margin-block: 8px 6px;
+}
+
+.why-grid p {
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+/* تماس */
+.contact-badge {
+  display: inline-block;
+  margin-block-start: 18px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+
+.footer-slogan {
+  margin-block-start: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* نسخه بدون جاوااسکریپت */
+.noscript-cases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-block-start: 16px;
+}
+
+.noscript-cases article {
+  background: var(--white);
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.noscript-cases h3 {
+  font-size: 0.95rem;
+  margin-block-end: 4px;
+}
+
+.noscript-cases p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+@media (max-width: 1024px) {
+  .problems-grid { grid-template-columns: 1fr; gap: 26px; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .noscript-cases { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
